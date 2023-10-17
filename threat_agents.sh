@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Simulate an ICMP Ping scan to discover the VM
-ping -c 3 <VM_IP_ADDRESS>
+ping -c 3 $VICTIM_IP_ADDR
 
 # Simulate a simple TCP connection using netcat
-echo "Attempting tcp connection..." | nc <VM_IP_ADDRESS> 80
+echo "Attempting tcp connection..." | nc $VICTIM_IP_ADDR 80
