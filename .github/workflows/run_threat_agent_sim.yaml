@@ -15,9 +15,6 @@ jobs:
     - name: Check out code
       uses: actions/checkout@v2
 
-    - name: List files in current directory
-      run: ls -a
-
     - name: Run Threat Agent Script
       run: |
         chmod +x ./threat_agent.sh
