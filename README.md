@@ -5,9 +5,9 @@ simple threat agent sim for honeypot testing purposes
 
 make a bash script
 
-`bash 
+```bash 
 nano ~/threat_agent.sh
-`
+```
 add basic testing script:
 
 ```bash
