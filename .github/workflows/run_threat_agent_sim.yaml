@@ -9,7 +9,7 @@ jobs:
   run-threat-agent:
     runs-on: ubuntu-latest
     env:
-      VM_IP_ADDRESS: ${{ secrets.Victim_IP_ADDR }}
+      VM_IP_ADDRESS: ${{ secrets.VICTIM_IP_ADDR}}
     
     steps:
     - name: Check out code
