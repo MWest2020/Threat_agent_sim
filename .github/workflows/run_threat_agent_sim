@@ -1,0 +1,15 @@
+name: Run Threat Agent Simulator
+on:
+  # manual trigger 
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+jobs:
+  run-threat-agent:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Execute Script
+        run: ./threat_agent.sh
