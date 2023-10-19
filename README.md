@@ -12,12 +12,14 @@ add basic testing script:
 
 ```bash
 #!/bin/bash
+#simulate  an ICMP ping scan to discover the victim
+ping -c 3 192.168.131.230
 
-# Simulate an ICMP Ping scan to discover the victim
-ping -c 3 <Victim_IP_ADDRESS>
+# simulate a tcp connection with netcat
+echo -e "GET / HTTP/1.1\r\nHost: 10.0.2.15\r\n\r\n" | nc 192.168.131.230 80
 
-# Simulate a simple TCP connection using netcat
-echo "Attempting connection..." | nc <Victim_IP_ADDRESS> 80
+# Attempt to SSH into the machine (this will fail but should be logged by OpenCanary)
+ssh -o StrictHostKeyChecking=no -o ConnectTimeout=5 192.168.131.230
 ```
 
 make it an executable:
